@@ -48,7 +48,8 @@ users_router = router.register(r'users', UserViewSet,basename="user")
 urlpatterns = [
     path('admin/', admin.site.urls),
     re_path(r'v1/', include(router.urls)),
-    path('auth/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
-    path('auth/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
-    path('auth/token/verify/', TokenVerifyView.as_view(), name='token_verify'),
+    path('auth/', include('auth.urls')),
+    # path('auth/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    # path('auth/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    # path('auth/token/verify/', TokenVerifyView.as_view(), name='token_verify'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

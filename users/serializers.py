@@ -8,4 +8,4 @@ class UserSerializer(serializers.ModelSerializer):
     cash = serializers.ReadOnlyField()
     class Meta:
         model = User
-        fields = ['id', 'username','cash', 'image' ,'email', 'is_active', 'date_joined']
+        fields = ['id', 'username','cash', 'image' ,'email', 'is_active']
